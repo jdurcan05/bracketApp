@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     var test = "test"
     var kanye = "Not cool dude"
+    var mason = "Sucks"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +19,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func addParticipentSegueButton(_ sender: Any) {
+    }
 }
 
