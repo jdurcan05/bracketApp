@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     var test = "test"
     var kanye = "Not cool dude"
-    var mason = "Sucks"
+    var jame = "Sucks"
     
     override func viewDidLoad() {
         super.viewDidLoad()
