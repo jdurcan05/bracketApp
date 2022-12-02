@@ -7,6 +7,12 @@
 
 import UIKit
 
+class AppData{
+    static var teams: [String]?
+    static var numberOfTeams = 0
+    
+}
+
 class ViewController: UIViewController {
 
     var test = "test"
@@ -19,7 +25,10 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func addParticipentSegueButton(_ sender: Any) {
+    
+    @IBOutlet weak var segmentedOutlet: UISegmentedControl!
+    
+@IBAction func addParticipentSegueButton(_ sender: Any) {
     }
 }
 

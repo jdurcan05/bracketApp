@@ -88,6 +88,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControllerOutlet:" destination="BYZ-38-t0r" eventType="valueChanged" id="QGA-bp-vbS"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -111,6 +114,9 @@
                             <constraint firstItem="J0O-9r-cuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yng-Eq-Sy1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmentedOutlet" destination="ZUV-ly-U83" id="tyc-XF-oRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +154,7 @@
                                     <action selector="plusButtonAction:" destination="JaQ-wQ-tmk" eventType="touchUpInside" id="W1c-ha-a8t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXU-fA-DWs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXU-fA-DWs">
                                 <rect key="frame" x="31" y="171" width="114" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Randomize"/>
@@ -186,7 +192,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noE-W5-xGm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noE-W5-xGm">
                                 <rect key="frame" x="246" y="171" width="117" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
@@ -204,6 +210,7 @@
                             <constraint firstItem="UKW-fa-CsQ" firstAttribute="top" secondItem="noE-W5-xGm" secondAttribute="bottom" constant="24" id="9Ud-Jn-Wjo"/>
                             <constraint firstItem="UKW-fa-CsQ" firstAttribute="leading" secondItem="8ZL-7S-58e" secondAttribute="leading" id="DYY-mt-TRC"/>
                             <constraint firstItem="UKW-fa-CsQ" firstAttribute="trailing" secondItem="8ZL-7S-58e" secondAttribute="trailing" id="MQc-5i-gOX"/>
+                            <constraint firstItem="noE-W5-xGm" firstAttribute="leading" secondItem="IXU-fA-DWs" secondAttribute="trailing" constant="101" id="Q10-Sh-f0A"/>
                             <constraint firstItem="noE-W5-xGm" firstAttribute="top" secondItem="llc-dK-y4g" secondAttribute="bottom" constant="61" id="QdR-WG-w7g"/>
                             <constraint firstItem="llc-dK-y4g" firstAttribute="leading" secondItem="8ZL-7S-58e" secondAttribute="leading" constant="288" id="U19-cU-0NS"/>
                             <constraint firstItem="IXU-fA-DWs" firstAttribute="top" secondItem="mQm-yl-H5f" secondAttribute="bottom" constant="75" id="W2a-QV-ODW"/>
@@ -219,6 +226,7 @@
                             <constraint firstItem="8ZL-7S-58e" firstAttribute="trailing" secondItem="mQm-yl-H5f" secondAttribute="trailing" constant="99" id="tqy-Nl-J1i"/>
                             <constraint firstItem="UKW-fa-CsQ" firstAttribute="top" secondItem="IXU-fA-DWs" secondAttribute="bottom" constant="24" id="uhc-aI-dLD"/>
                             <constraint firstItem="IXU-fA-DWs" firstAttribute="leading" secondItem="8ZL-7S-58e" secondAttribute="leading" constant="31" id="xYj-EF-tj8"/>
+                            <constraint firstItem="IXU-fA-DWs" firstAttribute="leading" secondItem="8ZL-7S-58e" secondAttribute="leading" constant="31" id="xnx-cP-rzd"/>
                         </constraints>
                     </view>
                 </viewController>
