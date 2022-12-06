@@ -11,7 +11,6 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var textfieldOutlet: UITextField!
     
-    var teams: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +33,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         {
             if textfieldOutlet.text != nil
             {
-                teams.append(textfieldOutlet.text!)
+                AppData.teams.append(textfieldOutlet.text!)
             }
             else
             {
@@ -50,7 +49,8 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
     @IBAction func randomButtonAction(_ sender: UIButton) {
-        AppData.teams.
+        AppData.teams.shuffle()
+        //tableView.reloadData
     }
     
     }
