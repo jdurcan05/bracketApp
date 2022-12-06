@@ -26,6 +26,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel!.text = AppData.teams[indexPath.row]
         return cell
+    }
         
         
         
@@ -52,4 +53,4 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-}
+
