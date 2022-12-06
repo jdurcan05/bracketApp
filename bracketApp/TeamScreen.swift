@@ -33,7 +33,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         @IBAction func plusButtonAction(_ sender: Any)
         {
-            if textfieldOutlet.text != nil
+            if textfieldOutlet.text != ""
             {
                 AppData.teams.append(textfieldOutlet.text!)
                 tableViewOutlet.reloadData()
