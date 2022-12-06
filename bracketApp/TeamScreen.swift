@@ -46,14 +46,14 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 present(alert, animated: true, completion: nil)
             }
             
-            
         }
         
         @IBAction func confirmButtonAction(_ sender: Any) {
         }
         
-        @IBAction func randomizeAction(_ sender: Any) {
-        }
-        
+    @IBAction func randomButtonAction(_ sender: UIButton) {
+        AppData.teams.shuffle()
+        //tableView.reloadData
     }
-
+    
+    }
