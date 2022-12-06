@@ -27,23 +27,24 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel!.text = AppData.teams[indexPath.row]
         return cell
     }
-    
-    @IBAction func addButton(_ sender: UIButton) {
-        if textfieldOutlet.text != nil
+        
+        
+        
+        @IBAction func plusButtonAction(_ sender: Any)
         {
-            teams.append(textfieldOutlet.text!)
+            if textfieldOutlet.text != nil
+            {
+                teams.append(textfieldOutlet.text!)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
+            }
+            
         }
-        else
-        {
-            let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-        }
-        
-    }
-        
-        
         
         @IBAction func confirmButtonAction(_ sender: Any) {
         }
