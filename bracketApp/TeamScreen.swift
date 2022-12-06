@@ -53,7 +53,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     @IBAction func randomButtonAction(_ sender: UIButton) {
         AppData.teams.shuffle()
-        //tableView.reloadData
+        tableViewOutlet.reloadData()
     }
     
     }
