@@ -26,30 +26,30 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel!.text = AppData.teams[indexPath.row]
         return cell
-        
-        
-        
-        @IBAction func plusButtonAction(_ sender: Any)
+    }
+    
+    @IBAction func addButton(_ sender: UIButton) {
+        if textfieldOutlet.text != nil
         {
-            if textfieldOutlet.text != nil
-            {
-                teams.append(textfieldOutlet.text!)
-            }
-            else
-            {
-                let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-            
+            teams.append(textfieldOutlet.text!)
         }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
+    }
+        
+        
         
         @IBAction func confirmButtonAction(_ sender: Any) {
         }
         
-        @IBAction func randomizeAction(_ sender: Any) {
-        }
-        
+    @IBAction func randomButtonAction(_ sender: UIButton) {
+        AppData.teams.
     }
-}
+    
+    }
