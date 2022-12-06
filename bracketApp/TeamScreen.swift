@@ -11,11 +11,12 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var textfieldOutlet: UITextField!
     
-    var teams: [String] = [String]()
+    @IBOutlet weak var tableViewOutlet: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +35,8 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         {
             if textfieldOutlet.text != nil
             {
-                teams.append(textfieldOutlet.text!)
+                AppData.teams.append(textfieldOutlet.text!)
+                tableViewOutlet.reloadData()
             }
             else
             {
@@ -43,6 +45,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(okAction)
                 present(alert, animated: true, completion: nil)
             }
+            
             
         }
         
