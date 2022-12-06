@@ -7,37 +7,49 @@
 
 import UIKit
 
-class TeamScreen: UIViewController {
-
+class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var textfieldOutlet: UITextField!
     
     var teams: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func plusButtonAction(_ sender: Any)
-    {
-        if textfieldOutlet.text != nil
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppData.teams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+        cell.textLabel!.text = AppData.teams[indexPath.row]
+        return cell
+        
+        
+        
+        @IBAction func plusButtonAction(_ sender: Any)
         {
-            teams.append(textfieldOutlet.text!)
+            if textfieldOutlet.text != nil
+            {
+                teams.append(textfieldOutlet.text!)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
+            }
+            
         }
-        else
-        {
-            let alert = UIAlertController(title: "Error", message: "Enter a team name!", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
+        
+        @IBAction func confirmButtonAction(_ sender: Any) {
+        }
+        
+        @IBAction func randomizeAction(_ sender: Any) {
         }
         
     }
-    
-    @IBAction func confirmButtonAction(_ sender: Any) {
-    }
-    
-    @IBAction func randomizeAction(_ sender: Any) {
-    }
-    
 }

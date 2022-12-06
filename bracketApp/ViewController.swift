@@ -8,7 +8,7 @@
 import UIKit
 
 class AppData{
-    static var teams: [String]?
+    static var teams: [String]
     static var numberOfTeams = 0
     
 }
