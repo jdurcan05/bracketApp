@@ -9,6 +9,8 @@ import UIKit
 
 class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     @IBOutlet weak var textfieldOutlet: UITextField!
     
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -17,6 +19,10 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        tableViewOutlet.dragInteractionEnabled = true
+        tableViewOutlet.isEditing = true
+        tableViewOutlet.allowsSelectionDuringEditing = true
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,6 +34,34 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel!.text = AppData.teams[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete
+        {
+            AppData.teams.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        print("can move row")
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("trying to move row")
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+   
+        
+    
         
         
         
@@ -37,6 +71,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             {
                 AppData.teams.append(textfieldOutlet.text!)
                 tableViewOutlet.reloadData()
+                textfieldOutlet.text = ""
             }
             else
             {
@@ -45,6 +80,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 alert.addAction(okAction)
                 present(alert, animated: true, completion: nil)
             }
+            
             
         }
         
