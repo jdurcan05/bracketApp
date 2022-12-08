@@ -14,6 +14,7 @@
 		680554B12938E36E00745A0D /* bracketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 680554AF2938E36E00745A0D /* bracketApp.xcdatamodeld */; };
 		680554B32938E36F00745A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 680554B22938E36F00745A0D /* Assets.xcassets */; };
 		680554B62938E36F00745A0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 680554B42938E36F00745A0D /* LaunchScreen.storyboard */; };
+		6842A109294223CF00812150 /* VsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6842A108294223CF00812150 /* VsCell.swift */; };
 		6874062C293A3AC400B7F37A /* TeamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6874062B293A3AC400B7F37A /* TeamScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		680554B22938E36F00745A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		680554B52938E36F00745A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		680554B72938E36F00745A0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6842A108294223CF00812150 /* VsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VsCell.swift; sourceTree = "<group>"; };
 		6874062B293A3AC400B7F37A /* TeamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 				680554A82938E36E00745A0D /* SceneDelegate.swift */,
 				680554AA2938E36E00745A0D /* ViewController.swift */,
 				680554AC2938E36E00745A0D /* Main.storyboard */,
+				6842A108294223CF00812150 /* VsCell.swift */,
 				6874062B293A3AC400B7F37A /* TeamScreen.swift */,
 				680554B22938E36F00745A0D /* Assets.xcassets */,
 				680554B42938E36F00745A0D /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6842A109294223CF00812150 /* VsCell.swift in Sources */,
 				680554B12938E36E00745A0D /* bracketApp.xcdatamodeld in Sources */,
 				680554AB2938E36E00745A0D /* ViewController.swift in Sources */,
 				680554A72938E36E00745A0D /* AppDelegate.swift in Sources */,

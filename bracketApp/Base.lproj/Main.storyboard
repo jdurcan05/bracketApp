@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="230" width="390" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="o0H-k1-ZVp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="o0H-k1-ZVp" customClass="VsCell" customModule="bracketApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0H-k1-ZVp" id="oPm-DJ-rhN">
@@ -58,6 +58,10 @@
                                                 </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="teamOneLabel" destination="WEK-Vp-Rpu" id="BQT-5K-XU7"/>
+                                            <outlet property="vsLabel" destination="MmT-IA-ZQI" id="hQt-WM-55i"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

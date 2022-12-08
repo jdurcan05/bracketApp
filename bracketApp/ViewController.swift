@@ -13,7 +13,17 @@ class AppData{
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppData.teams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! VsCell
+        cell.configure()
+            return cell
+    }
+    
 
     var test = "test"
     var kanye = "Not cool dude"
@@ -31,6 +41,11 @@ class ViewController: UIViewController {
 @IBAction func addParticipentSegueButton(_ sender: Any) {
     print("working")
         }
+    
+    //table time
+    
+    
+    
     
     
     
