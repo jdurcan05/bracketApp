@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
 @IBAction func addParticipentSegueButton(_ sender: Any) {
     print("working")
-    print( makeBracket(teams: AppData.teams))
+    
     }
     
     
