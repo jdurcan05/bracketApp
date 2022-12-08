@@ -13,7 +13,17 @@ class AppData{
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppData.teams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! VsCell
+        cell.configure()
+            return cell
+    }
+    
 
     var test = "test"
     var kanye = "Not cool dude"
@@ -30,19 +40,24 @@ class ViewController: UIViewController {
     
 @IBAction func addParticipentSegueButton(_ sender: Any) {
     print("working")
+        }
     
-    }
+    //table time
     
     
     
     
-    //This literally just fetches the amount of bies. The number is the amount of people who move on to round 2 without having to play anyone. Should be correct.
-    func makeBracket(teams: [String]) -> Int{
+    
+    
+    
+    //Making this do the whole bracket (Trying). The number is the amount of people who move on to round 2 without having to play anyone. Should be correct.
+    func makeBracket(teams: [String]){
         //checks if a bracket is a power of 2 or even
         var check = false
         var bies = 0
         var perfect = false
         var count = teams.count
+        var firstRoundMatches: Int
         if (count%2 == 0){
             while (count%2 == 0 ){
                 count = count/2
@@ -72,7 +87,31 @@ class ViewController: UIViewController {
                 }
             }
         }
-        return bies
+        firstRoundMatches = firstRoundMatchesCalc(perfect: perfect, teams: teams, bies: bies)
+        if(perfect){
+            var teamsTemp = teams
+            //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
+        }
+        else{
+            var teamsTemp = teams
+           // populate table with only the amount of cells as first round matches and only run the loop to put people in that many times
+        }
     }
+    
+    
+    
+    
+    //calclulates first roundMatches
+    func firstRoundMatchesCalc(perfect: Bool, teams: [String], bies: Int)-> Int{
+        var firstRoundMatches = 0
+        if(perfect){
+            firstRoundMatches = teams.count/2
+        }
+        else{
+            firstRoundMatches = (teams.count+bies)/2 - bies
+        }
+        return firstRoundMatches
+    }
+    
 }
 
