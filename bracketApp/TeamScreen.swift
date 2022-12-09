@@ -32,6 +32,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel!.text = AppData.teams[indexPath.row]
+        cell.detailTextLabel!.text = "\(indexPath.row + 1)"
         return cell
     }
     
