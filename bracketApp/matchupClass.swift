@@ -10,7 +10,7 @@ import Foundation
 
 class MatchUpClass{
     
-    init(homeTeam: String, awayTeam: String, homeScore: Int, awayScore; Int) {
+    init(homeTeam: String, awayTeam: String, homeScore: Int, awayScore: Int) {
         
     }
     
