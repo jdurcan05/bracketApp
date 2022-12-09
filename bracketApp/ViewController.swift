@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! VsCell
-        cell.configure()
+        cell.configure(match: AppData.matches[indexPath.row])
             return cell
     }
     
@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var teamsTemp = teams
             tableRows = firstRoundMatches
             for i in 0..<firstRoundMatches {
-                AppData.matches.append(MatchupClass.init(homeTeam:tempTeams[0], awayTeam: tempTeams[1], homeScore: 0, awayScore: 0))
+                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
                 tempTeams.remove(at: 0)
                 tempTeams.remove(at:1)
             }

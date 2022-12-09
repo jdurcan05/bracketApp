@@ -19,10 +19,11 @@ class VsCell: UITableViewCell{
     @IBOutlet weak var winnerLabel: UILabel!
     
     
+    var cellMatch: MatchupClass?
     func labelChange(teamOne: String, teamTwo: String){
         
     }
     func configure (match: MatchupClass){
-        
+        cellMatch = match
     }
 }
