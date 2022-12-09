@@ -10,6 +10,7 @@ import UIKit
 class AppData{
     static var teams: [String] = []
     static var numberOfTeams = 0
+    static var matches: [MatchupClass] = []
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -96,8 +97,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var teamsTemp = teams
             tableRows = firstRoundMatches
             tableViewOutlet.reloadData()
-            for (i in 0...firstRoundMatches ){
-                
+            for i in 0..<firstRoundMatches {
+                AppData.matches.append(MatchUpClass.init(homeTeam: <#T##String#>, awayTeam: <#T##String#>, homeScore: <#T##Int#>))
             }
             //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
         }
