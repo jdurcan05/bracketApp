@@ -58,6 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Making this do the whole bracket (Trying). The number is the amount of people who move on to round 2 without having to play anyone. Should be correct.
     func makeBracket(teams: [String]){
         //checks if a bracket is a power of 2 or even
+        var tempTeams = teams
         var check = false
         var bies = 0
         var perfect = false
@@ -96,10 +97,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(perfect){
             var teamsTemp = teams
             tableRows = firstRoundMatches
-            tableViewOutlet.reloadData()
             for i in 0..<firstRoundMatches {
-                AppData.matches.append(MatchUpClass.init(homeTeam: <#T##String#>, awayTeam: <#T##String#>, homeScore: <#T##Int#>))
+                AppData.matches.append(MatchUpClass.init(homeTeam:tempTeams[0], awayTeam: tempTeams[1], homeScore: 0, awayScore: 0))
+                tempTeams.remove(at: 0)
+                tempTeams.remove(at:1)
             }
+            tableViewOutlet.reloadData()
             //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
         }
         else{

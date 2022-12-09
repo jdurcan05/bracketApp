@@ -18,7 +18,7 @@ class VsCell: UITableViewCell{
     func labelChange(teamOne: String, teamTwo: String){
         
     }
-    func configure (){
+    func configure (match: MatchUpClass){
         
     }
 }
