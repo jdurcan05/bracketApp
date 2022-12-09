@@ -8,7 +8,7 @@
 import Foundation
 
 
-class MatchUpClass{
+class MatchupClass{
     
     init(homeTeam: String, awayTeam: String, homeScore: Int, awayScore: Int) {
         

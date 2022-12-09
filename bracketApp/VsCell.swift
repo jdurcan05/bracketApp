@@ -14,11 +14,15 @@ class VsCell: UITableViewCell{
     
     @IBOutlet weak var teamOneLabel: UILabel!
     
+    @IBOutlet weak var teamTwoLabel: UILabel!
+    
+    @IBOutlet weak var winnerLabel: UILabel!
+    
     
     func labelChange(teamOne: String, teamTwo: String){
         
     }
-    func configure (match: MatchUpClass){
+    func configure (match: MatchupClass){
         
     }
 }

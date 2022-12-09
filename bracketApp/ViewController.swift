@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var test = "test"
     var kanye = "Not cool dude"
-    var mason = "Sucks"
+    var jame = "cool"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var teamsTemp = teams
             tableRows = firstRoundMatches
             for i in 0..<firstRoundMatches {
-                AppData.matches.append(MatchUpClass.init(homeTeam:tempTeams[0], awayTeam: tempTeams[1], homeScore: 0, awayScore: 0))
+                AppData.matches.append(MatchupClass.init(homeTeam:tempTeams[0], awayTeam: tempTeams[1], homeScore: 0, awayScore: 0))
                 tempTeams.remove(at: 0)
                 tempTeams.remove(at:1)
             }

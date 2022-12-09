@@ -23,12 +23,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="53" id="o0H-k1-ZVp" customClass="VsCell" customModule="bracketApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0H-k1-ZVp" id="oPm-DJ-rhN">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0H-k1-ZVp" id="oPm-DJ-rhN" customClass="VsCell" customModule="bracketApp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="MmT-IA-ZQI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310.33333333333331" height="20.333333333333332"/>
+                                                    <rect key="frame" x="40" y="14.999999999999998" width="310.33333333333331" height="20.333333333333332"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-Vp-Rpu">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
@@ -60,7 +60,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="teamOneLabel" destination="WEK-Vp-Rpu" id="BQT-5K-XU7"/>
+                                            <outlet property="teamTwoLabel" destination="rD9-Ws-28j" id="aCG-PD-9SY"/>
                                             <outlet property="vsLabel" destination="MmT-IA-ZQI" id="hQt-WM-55i"/>
+                                            <outlet property="winnerLabel" destination="XPp-gd-dpO" id="uWv-Vg-jQV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
