@@ -10,12 +10,16 @@ import UIKit
 class AppData{
     static var teams: [String] = []
     static var numberOfTeams = 0
-    
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var tableRows = 0
+    
+    @IBOutlet weak var tableViewOutlet: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppData.teams.count
+        return tableRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,6 +94,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         firstRoundMatches = firstRoundMatchesCalc(perfect: perfect, teams: teams, bies: bies)
         if(perfect){
             var teamsTemp = teams
+            tableRows = firstRoundMatches
+            tableViewOutlet.reloadData()
+            for (i in 0...firstRoundMatches ){
+                
+            }
             //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
         }
         else{
