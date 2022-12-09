@@ -87,7 +87,10 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        @IBAction func confirmButtonAction(_ sender: Any) {
+        @IBAction func confirmButtonAction(_ sender: Any)
+        {
+            
+            
         }
         
     @IBAction func randomButtonAction(_ sender: UIButton) {
