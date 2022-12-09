@@ -32,7 +32,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel!.text = AppData.teams[indexPath.row]
-        cell.detailTextLabel!.text = "\(indexPath.row + 1)"
+        cell.detailTextLabel!.text = "Seed: \(indexPath.row + 1)"
         return cell
     }
     
@@ -42,6 +42,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         {
             AppData.teams.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            tableViewOutlet.reloadData()
         }
         
         
@@ -55,6 +56,7 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         AppData.teams.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+        tableViewOutlet.reloadData()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
