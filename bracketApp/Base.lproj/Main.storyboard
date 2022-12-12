@@ -73,7 +73,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Add Participents"/>
                                 <connections>
                                     <action selector="addParticipentSegueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NS6-5f-8fD"/>
-                                    <segue destination="JaQ-wQ-tmk" kind="show" id="Cq3-dV-TiP"/>
+                                    <segue destination="JaQ-wQ-tmk" kind="show" identifier="theSegue" id="Cq3-dV-TiP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Click to Edit Title" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J0O-9r-cuW">
@@ -116,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kbK-ve-lAe"/>
                     <connections>
+                        <outlet property="addParticipentsOutlet" destination="nPO-bj-0gl" id="P9P-vE-Tyq"/>
                         <outlet property="segmentedOutlet" destination="ZUV-ly-U83" id="tyc-XF-oRQ"/>
                         <outlet property="tableViewOutlet" destination="qXB-Em-zx3" id="Rg4-GP-5Qh"/>
                     </connections>
@@ -226,9 +227,11 @@
                     <connections>
                         <outlet property="tableViewOutlet" destination="UKW-fa-CsQ" id="XIj-az-QYi"/>
                         <outlet property="textfieldOutlet" destination="mQm-yl-H5f" id="9rd-4g-HQX"/>
+                        <segue destination="lae-ok-8Ai" kind="unwind" identifier="unwindSegue" unwindAction="unwind:" id="gYJ-sI-RGH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPm-VH-ZdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lae-ok-8Ai" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1635" y="4"/>
         </scene>
