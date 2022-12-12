@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    @IBOutlet weak var addParticipentsOutlet: UIButton!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableRows
     }
@@ -125,6 +127,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return firstRoundMatches
     }
+    
+    @IBAction func unwind(_ seg: UIStoryboardSegue)
+    {
+        print("unwind")
+        addParticipentsOutlet.isHidden = true
+        
+    }
+    
     
 }
 

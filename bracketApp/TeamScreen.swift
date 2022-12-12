@@ -63,11 +63,6 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return true
     }
    
-        
-    
-        
-        
-        
         @IBAction func plusButtonAction(_ sender: Any)
         {
             if textfieldOutlet.text != ""
@@ -87,11 +82,13 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        @IBAction func confirmButtonAction(_ sender: Any)
-        {
+  
+    
+    @IBAction func confirmButtonAction(_ sender: Any)
+    {
+       performSegue(withIdentifier: "unwindSegue", sender: nil)
             
-            
-        }
+    }
         
     @IBAction func randomButtonAction(_ sender: UIButton) {
         AppData.teams.shuffle()
