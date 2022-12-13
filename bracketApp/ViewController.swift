@@ -119,6 +119,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             newCount = newCount/2
             rounds += 1
         }
+        //this if else covers first round matches and places them into the table, we need to find a way to show a seperate table for seperate matches
         if(perfect){
             var teamsTemp = teams
             for _ in 0..<firstRoundMatches {

@@ -26,6 +26,5 @@ class VsCell: UITableViewCell{
     func configure (match: MatchupClass){
         cellMatch = match
         teamOneLabel.text = cellMatch!.homeTeam
-        teamTwoLabel.text = cellMatch!.awayTeam
-    }
+        teamTwoLabel.text = cellMatch!.awayTeam    }
 }
