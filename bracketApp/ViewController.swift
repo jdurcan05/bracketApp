@@ -11,9 +11,19 @@ class AppData{
     static var teams: [String] = []
     static var numberOfTeams = 0
     static var matches: [MatchupClass] = []
+    static var teamCheck = false
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    override func viewWillAppear(_ animated: Bool){
+        if AppData.teams.count !=  0{
+            makeBracket(teams: AppData.teams)
+        }
+        tableViewOutlet.reloadData()
+    }
+
+    
     
     var tableRows = 0
     
@@ -22,12 +32,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var addParticipentsOutlet: UIButton!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableRows
+        print("Hello")
+        return AppData.matches.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! VsCell
         cell.configure(match: AppData.matches[indexPath.row])
+        print("CELL MADE")
             return cell
     }
     
@@ -38,6 +51,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -46,7 +62,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
     
 @IBAction func addParticipentSegueButton(_ sender: Any) {
-    print("working")
         }
     
     //table time
@@ -100,17 +115,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             var teamsTemp = teams
             tableRows = firstRoundMatches
             for i in 0..<firstRoundMatches {
+                print("hola")
                 AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
+                print(teamsTemp)
                 tempTeams.remove(at: 0)
-                tempTeams.remove(at:1)
+                tempTeams.remove(at:0)
+                print(AppData.matches[0].homeTeam)
             }
             tableViewOutlet.reloadData()
+            print("table loaded")
             //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
         }
         else{
             var teamsTemp = teams
            // populate table with only the amount of cells as first round matches and only run the loop to put people in that many times
         }
+        print("test")
     }
     
     
