@@ -165,6 +165,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         print("unwind")
         addParticipentsOutlet.isHidden = true
+        if AppData.teams.count !=  0{
+            makeBracket(teams: AppData.teams)
+        }
+        tableViewOutlet.reloadData()
         
     }
     
