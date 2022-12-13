@@ -16,6 +16,14 @@ class AppData{
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
+        // Do any additional setup after loading the view.
+    }
+
     override func viewWillAppear(_ animated: Bool){
         if AppData.teams.count !=  0{
             makeBracket(teams: AppData.teams)
@@ -24,8 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     
-    
-    var tableRows = 0
+    var test = "test"
+    var kanye = "Not cool dude"
+    var mase = "lame"
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
@@ -45,18 +54,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
-    var test = "test"
-    var kanye = "Not cool dude"
-    var jame = "cool"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableViewOutlet.delegate = self
-        tableViewOutlet.dataSource = self
-        // Do any additional setup after loading the view.
-    }
-
+ 
+   
 
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
@@ -81,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var perfect = false
         var count = teams.count
         var firstRoundMatches: Int
+        var rounds = 0
         if (count%2 == 0){
             while (count%2 == 0 ){
                 count = count/2
@@ -110,12 +110,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
+       
         firstRoundMatches = firstRoundMatchesCalc(perfect: perfect, teams: teams, bies: bies)
+        var newCount = firstRoundMatches
+        newCount = (firstRoundMatches + bies)/2
+        rounds = 2
+        while(newCount != 1){
+            newCount = newCount/2
+            rounds += 1
+        }
         if(perfect){
             var teamsTemp = teams
-            tableRows = firstRoundMatches
-            for i in 0..<firstRoundMatches {
-                print("hola")
+            for _ in 0..<firstRoundMatches {
                 AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
                 print(teamsTemp)
                 tempTeams.remove(at: 0)
@@ -123,11 +129,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print(AppData.matches[0].homeTeam)
             }
             tableViewOutlet.reloadData()
-            print("table loaded")
             //make table just print one array[0] and array [1] into each seperate spot and then delete them from the temporary array this is only minimum and first round only populate table with first round matches cells only
         }
         else{
             var teamsTemp = teams
+            for _ in 0..<firstRoundMatches {
+                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
+                print(teamsTemp)
+                tempTeams.remove(at: 0)
+                tempTeams.remove(at:0)
+                print(AppData.matches[0].homeTeam)
+            }
+            tableViewOutlet.reloadData()
            // populate table with only the amount of cells as first round matches and only run the loop to put people in that many times
         }
         print("test")
