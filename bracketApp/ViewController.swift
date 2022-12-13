@@ -16,15 +16,6 @@ class AppData{
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    override func viewWillAppear(_ animated: Bool){
-        if AppData.teams.count !=  0{
-            makeBracket(teams: AppData.teams)
-        }
-        tableViewOutlet.reloadData()
-    }
-
-    
-    
     var tableRows = 0
     
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -152,6 +143,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         print("unwind")
         addParticipentsOutlet.isHidden = true
+        if AppData.teams.count !=  0{
+            makeBracket(teams: AppData.teams)
+        }
+        tableViewOutlet.reloadData()
         
     }
     
