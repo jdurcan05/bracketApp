@@ -86,7 +86,18 @@ class TeamScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func confirmButtonAction(_ sender: Any)
     {
-       performSegue(withIdentifier: "unwindSegue", sender: nil)
+        if AppData.teams.count >= 3
+        {
+            performSegue(withIdentifier: "unwindSegue", sender: nil)
+        }
+        else
+        {
+            let numTeamsAlert = UIAlertController(title: "Error", message: "Enter 3 or more teams", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+            numTeamsAlert.addAction(okAction)
+            present(numTeamsAlert, animated: true, completion: nil)
+        }
+       
             
     }
         
