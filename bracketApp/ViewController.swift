@@ -35,6 +35,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var test = "test"
     var kanye = "Not cool dude"
     var mase = "lame"
+    var rounds = 0
+    var labels = ["Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Nineth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth"]
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
@@ -80,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var perfect = false
         var count = teams.count
         var firstRoundMatches: Int
-        var rounds = 0
+        rounds = 0
         if (count%2 == 0){
             while (count%2 == 0 ){
                 count = count/2
@@ -119,6 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             newCount = newCount/2
             rounds += 1
         }
+        addSegueButtons(rounds2: rounds)
         //this if else covers first round matches and places them into the table, we need to find a way to show a seperate table for seperate matches
         if(perfect){
             var teamsTemp = teams
@@ -168,6 +171,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return firstRoundMatches
     }
     
+    func addSegueButtons(rounds2: Int){
+        if(rounds2 > 2){
+            for i in 0 ... rounds2-3 {
+                segmentedOutlet.insertSegment(withTitle: labels[i], at: i+2, animated: false)
+            }
+        }
+    }
+    
     @IBAction func unwind(_ seg: UIStoryboardSegue)
     {
         print("unwind")
@@ -176,9 +187,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             makeBracket(teams: AppData.teams)
         }
         tableViewOutlet.reloadData()
+        segmentedOutlet.isHidden = false
         
     }
-    
+
     
 }
 
