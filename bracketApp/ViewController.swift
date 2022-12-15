@@ -126,7 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(perfect){
             var teamsTemp = teams
             for _ in 0..<firstRoundMatches {
-                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
+                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0, match: true))
                 print(teamsTemp)
                 tempTeams.remove(at: 0)
                 tempTeams.remove(at:0)
@@ -138,12 +138,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else{
             var teamsTemp = teams
             for _ in 0..<firstRoundMatches {
-                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0))
+                AppData.matches.append(MatchupClass.init(hTeam:tempTeams[0], aTeam: tempTeams[1], hScore: 0, aScore: 0, match: true))
                 print(teamsTemp)
                 tempTeams.remove(at: 0)
                 tempTeams.remove(at:0)
                 print(AppData.matches[0].homeTeam)
             }
+            for _ in 0..<bies
+            {
+                AppData.matches.append(MatchupClass.init(hTeam: tempTeams[0], aTeam: "BYE", hScore: 0, aScore: 0, match: false))
+                tempTeams.remove(at: 0)
+            }
+            
             tableViewOutlet.reloadData()
            // populate table with only the amount of cells as first round matches and only run the loop to put people in that many times
         }
